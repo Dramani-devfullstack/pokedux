@@ -6,10 +6,10 @@ import {CLICK} from './store/action'
 import GameBoy from "./components/GameBoy";
 import PokeList from "./components/PokeList";
 
-const App = ( {click, handleClick}) => {
+const App = ( {Click, }) => {
   return (
     <div className="App">
-    <button onClick = {()=>handleClick()}>click</button>
+    <button onClick = {()=>Click()}>click</button>
       
       <GameBoy />
       <PokeList />
@@ -17,16 +17,11 @@ const App = ( {click, handleClick}) => {
   );
 };
 
-const mapStateToProps = ({ click }) =>{
-  return{
-    click
-  };
-};
 
 const mapDispactchToProps = dispatch => {
   return {
-    handleClick : () => dispatch ({type : CLICK})
+    Click : () => dispatch ({type : CLICK})
   }
 }
 
-export default connect(mapStateToProps, mapDispactchToProps )(App);
+export default connect(null, mapDispactchToProps )(App);

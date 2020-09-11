@@ -1,4 +1,5 @@
 import React from "react";
+import {connect} from 'react-redux';
 
 import PokemonItem from "./PokemonItem";
 
@@ -16,4 +17,11 @@ const PokeList = () => {
   );
 };
 
-export default PokeList;
+const mapStateToProps = ({ click }) =>{
+  return{
+    click
+  };
+};
+
+
+export default connect (mapStateToProps) (PokeList);
